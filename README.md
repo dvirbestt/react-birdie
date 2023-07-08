@@ -1,4 +1,5 @@
-#This is Only a Project for
+***This is Only a Project for learning***
+Making a tweeter clone on MERN Stack
 
 
 
