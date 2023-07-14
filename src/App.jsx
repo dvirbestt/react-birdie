@@ -4,6 +4,7 @@ import './App.css'
 import {Route, Routes} from "react-router";
 import HomePage from "./Pages/HomePage.jsx";
 import Connect from "./Pages/Connect.jsx";
+import Explore from "./Pages/Explore.jsx";
 
 function App() {
 
@@ -13,7 +14,8 @@ function App() {
 
           <Routes>
               <Route path={"/"} element={<Connect/>}/>
-              <Route path={"/home"} element={<HomePage/>}/>
+              <Route path={"/Home"} element={<HomePage/>}/>
+              <Route path={"/*"} element={<Explore/>}/>
           </Routes>
       </div>
   )

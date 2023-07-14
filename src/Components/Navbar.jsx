@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {connect} from "react-redux";
 import {BsTwitter} from "react-icons/bs";
 import {BiBell, BiBookmark, BiSearch, BiSolidHomeCircle} from "react-icons/bi";
@@ -8,18 +8,25 @@ import {LuVerified} from "react-icons/lu";
 import {FiUser} from "react-icons/fi";
 import {CgMoreO} from "react-icons/cg";
 import {SiPostman} from "react-icons/si";
+import {Link} from "react-router-dom";
 
 
 function Navbar(props) {
+    useEffect(() => {
+        console.log(props.currentLocation)
+    }, []);
+
     return (
         <div className={"flex flex-col items-baseline justify-center h-screen border-r-2 pl-7 pr-7 fixed w-1/4 "}>
             <div className={"flex flex-col p-10 items-baseline w-full gap-3"}>
-            <div className={"navbar-button"}><BsTwitter color={"208cff"} size={"2em"}/></div>
-            <div className={"navbar-button"}> <BiSolidHomeCircle size={"2em"}/><p>Home</p></div>
-            <div className={"navbar-button"}><BiSearch size={"2em"}/><p>Explore</p></div>
-            <div className={"navbar-button"}><BiBell size={"2em"}/> <p>Notifications</p></div>
-            <div className={"navbar-button"}><HiOutlineMail size={"2em"}/><p>Messages</p> </div>
-            <div className={"navbar-button"}><RiFileListLine size={"2em"}/> <p>Lists</p></div>
+
+            <div className={`navbar-button `}><BsTwitter color={"208cff"} size={"2em"}/></div>
+                {/* eslint-disable-next-line react/prop-types */}
+                <Link to={"/Home"}><div className={`navbar-button ${props?.currentLocation === "Home" ? "font-bold" : "" }`}> <BiSolidHomeCircle size={"2em"}/><p>Home</p></div></Link>
+           <Link to={"/Explore"}> <div className={`navbar-button ${props?.currentLocation === "Explore" ? "font-bold" : "" }`}><BiSearch size={"2em"}/><p>Explore</p></div></Link>
+            <div className={`navbar-button ${props?.currentLocation === "Notifications" ? "font-bold" : "" }`}><BiBell size={"2em"}/> <p>Notifications</p></div>
+            <div className={`navbar-button ${props?.currentLocation === "Messages" ? "font-bold" : "" }`}><HiOutlineMail size={"2em"}/><p>Messages</p> </div>
+            <div className={`navbar-button ${props?.currentLocation === "Lists" ? "font-bold" : "" }`}><RiFileListLine size={"2em"}/> <p>Lists</p></div>
             <div className={"navbar-button"}><BiBookmark size={"2em"}/><p>Bookmarks</p> </div>
             <div className={"navbar-button"}><LuVerified size={"2em"}/><p>Verified</p> </div>
             <div className={"navbar-button"}> <FiUser size={"2em"}/><p>Profile</p></div>

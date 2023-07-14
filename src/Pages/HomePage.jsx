@@ -3,6 +3,7 @@ import Navbar from "../Components/Navbar.jsx";
 import Feed from "../Components/Feed.jsx";
 import SubHeader from "../Components/SubHeader.jsx";
 import Searchbar from "../Components/Searchbar.jsx";
+import AddPost from "../Components/AddPost.jsx";
 
 function HomePage(props) {
 
@@ -15,12 +16,16 @@ function HomePage(props) {
 
     return (
         <div className={"flex w-screen"}>
-            <Navbar/>
-            <div>
-                <SubHeader currentLocation={"Home"} />
+            <Navbar currentLocation={"Home"}/>
+            <SubHeader currentLocation={"Home"} />
+            <Searchbar/>
+            <div className={"flex flex-col"}>
+                <AddPost/>
                 <Feed/>
-                <Searchbar/>
             </div>
+
+
+
 
         </div>
     );
