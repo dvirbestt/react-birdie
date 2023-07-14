@@ -34,7 +34,7 @@ function Login(props) {
                 }
             })
 
-            navigate("/test")
+            navigate("/home")
 
         }).catch((e)=> {
             console.log(e.response.data.message)
@@ -59,7 +59,8 @@ function Login(props) {
 
 
                 <button className={"mt-5 h-10 hover:bg-black hover:text-white  transition duration-300 border-l-2 border-r-2 border-black w-56"} type={"submit"}>Login</button>
-                <div className={"text-blue-600 mt-5 hover:cursor-pointer"}>Not Signed Up Yet? Click Here!</div>
+                {/* eslint-disable-next-line react/prop-types */}
+                <div onClick={()=> props.setSignup(true)} className={"text-blue-600 mt-5 hover:cursor-pointer"}>Not Signed Up Yet? Click Here!</div>
                 <div className={"flex h-8 items-center justify-center p-5 gap-4 border-2 rounded hover:cursor-pointer" }>Login With Google <FcGoogle size={30}/></div>
             </form>
             <img src={test} className={"w-8/12 "}/>
