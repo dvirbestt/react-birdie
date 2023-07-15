@@ -15,7 +15,6 @@ function Explore(props) {
         <div className={"flex w-full"}>
             <Navbar currentLocation={"Explore"}/>
             <SubHeader currentLocation={"Explore"} />
-            <Feed/>
             <Searchbar/>
         </div>
     );

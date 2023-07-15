@@ -10,7 +10,7 @@ function App() {
 
 
   return (
-      <div className={"flex w-full items-center justify-center"}>
+      <div className={"flex w-full items-center justify-center select-none "}>
 
           <Routes>
               <Route path={"/"} element={<Connect/>}/>
